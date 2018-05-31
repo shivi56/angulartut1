@@ -1,0 +1,106 @@
+<h1 align="center">PRODUCT RECORD</h1><br>
+
+<div class="container">
+<table class="container">
+  <thead>
+    <th>
+      ID
+    </th>
+    <th>NAME</th>
+    <th>PRICE</th>
+    <th>MFG</th>
+    <th>SOH</th>
+    <th>ORDER</th>
+    <th>DELETE</th>
+    <th>UPDATE</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.mfg}}</td>
+    <td>{{item.soh}}</td>
+    <td>{{item.order}}</td>
+    <td>
+      <button (click)="onDelete(item)" type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+      </button>
+    </td> 
+    <!-- <td>
+      <button  (click)="onDelete(item)">delete</button>
+    </td> -->
+     <td>
+      <button (click)="onUpdate(item)" type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
+      </button>
+    </td> 
+  </tr>
+</table>
+<br>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="C:\Users\admin\tyapp\1527672118974.jpg" alt="laptop">
+      <div class="caption">
+        <h3>DELL LAPTOP</h3>
+        <p>15 BYT 4c/40WHr: 2.26 Kg ( 4.98 lb ) with HD non-touch / 2.41 Kg ( 5.31 lb ) with HD touch </p>
+        <p>AC Adapter<br>
+          45 Watt AC Adapter (w/standard graphics)<br>
+          65 Watt AC Adapter (w/discrete graphics option)
+          </p>
+        <p><a href="#" class="btn btn-primary" role="button">BOOK</a> <a href="#" class="btn btn-default" role="button">CANCEL</a></p>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="‪‪C:\Users\admin\d.jpg" alt="laptop">
+      <div class="caption">
+        <h3>HP LAPTOP</h3>
+        <p>15 BYT 4c/40WHr: 2.26 Kg ( 4.98 lb ) with HD non-touch / 2.41 Kg ( 5.31 lb ) with HD touch </p>
+        <p>AC Adapter<br>
+          45 Watt AC Adapter (w/standard graphics)<br>
+          65 Watt AC Adapter (w/discrete graphics option)
+          </p>
+        <p><a href="#" class="btn btn-primary" role="button">BOOK</a> <a href="#" class="btn btn-default" role="button">CANCEL</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="‪‪C:\Users\admin\d.jpg" alt="laptop">
+      <div class="caption">
+        <h3>LENOVO  LAPTOP</h3>
+        <p>15 BYT 4c/40WHr: 2.26 Kg ( 4.98 lb ) with HD non-touch / 2.41 Kg ( 5.31 lb ) with HD touch </p>
+        <p>AC Adapter<br>
+          45 Watt AC Adapter (w/standard graphics)<br>
+          65 Watt AC Adapter (w/discrete graphics option)
+          </p>
+        <p><a href="#" class="btn btn-primary" role="button">BOOK</a> <a href="#" class="btn btn-default" role="button">CANCEL</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 align="center">ENTER NEW RECORD</h2>
+
+<h4>ENTER ID:<input type="number" #txtid class="form-control"></h4>
+<h4>ENTER NAME:<input type="text" #txtname class="form-control"></h4>
+<h4>ENTER PRICE:<input type="number" #txtprice class="form-control"></h4>
+<h4>ENTER MFG:<input type="text" #txtmfg class="form-control"></h4>
+<h4>SOH:</h4>
+<select class="form-control" #dpsoh>
+  <option *ngFor="let item of ar;let i=index">{{i}}</option>
+</select>
+<h4>ORDER:</h4>
+<select class="form-control" #dpord>
+  <option>Booked</option>
+  <option>cancel</option>
+</select>
+
+  <div class="form-group">
+    <button (click)="onAdd(txtid.value,txtname.value,txtprice.value,txtmfg.value,dpsoh.value,dpord.value)"  class="form-control btn btn-primary dropdown-toggle ">Add</button>
+
+  </div>
+</div>

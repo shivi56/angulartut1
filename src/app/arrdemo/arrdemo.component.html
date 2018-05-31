@@ -1,0 +1,14 @@
+<input type="number" [(ngModel)]="no1">
+<input type="number" [(ngModel)]="no2">
+<button (click)="onclick()">Click</button>
+<h1>{{res}}</h1>
+<h1>{{str}}</h1>
+<input type="text" [(ngModel)]="arr">
+<h1>{{arr}}</h1>
+<h1 *ngIf="flag">hii</h1>
+<button (click)="onPrint()">Print</button>
+<ul>
+  <li *ngFor="let item of str">
+    {{item}}
+  </li>
+</ul>

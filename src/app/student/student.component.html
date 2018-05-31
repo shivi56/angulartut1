@@ -1,0 +1,60 @@
+<h1 align="center">STUDENT RECORD</h1><br>
+
+<div class="container">
+<table class="container">
+  <thead>
+    <th>
+      ID
+    </th>
+    <th>NAME</th>
+    <th>MOB_NO</th>
+    <th>GENDER</th>
+    <th>CITY</th>
+    <th>FEES</th>
+    <th>DELETE</th>
+    <th>UPDATE</th>
+  </thead>
+  <tr *ngFor="let item of arr">
+    <td>{{item.id}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.mobno}}</td>
+    <td>{{item.gender}}</td>
+    <td>{{item.city}}</td>
+    <td>{{item.fees}}</td>
+    <td>
+      <button (click)="onDelete(item)" type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete
+      </button>
+    </td>
+    <!-- <td>
+      <button  (click)="onDelete(item)">delete</button>
+    </td> -->
+     <td>
+      <button (click)="onUpdate(item)" type="button" class="btn btn-default">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
+      </button>
+    </td>
+  </tr>
+</table>
+<br>
+<br>
+<h2 align="center">ENTER NEW RECORD</h2>
+
+<h4>ENTER ID:<input type="number" #txtid class="form-control"></h4>
+<h4>ENTER NAME:<input type="text" #txtname class="form-control"></h4>
+<h4>ENTER MOB_NO:<input type="text" #txtmob class="form-control"></h4>
+<h4>SELECT GENDER:--><input type="radio" name="r1" value="female" [(ngModel)]="g">female
+  <input type="radio" name="r1" value="male" [(ngModel)]="g" >male</h4>
+<h4>CITY:</h4>
+<select class="form-control" #dpcity>
+  <option>abad</option>
+  <option>baroda</option>
+  <option>goa</option>
+  <option>mumbai</option>
+</select>
+<h4>ENTER FEES:<input type="number" #txtfees class="form-control"></h4>
+
+  <div class="form-group">
+    <button (click)="onAdd(txtid.value,txtname.value,txtmob.value,g,dpcity.value,txtfees.value)"  class="form-control btn btn-primary dropdown-toggle ">Add</button>
+  </div>
+</div>
